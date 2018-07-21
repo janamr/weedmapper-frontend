@@ -1,0 +1,30 @@
+<h2>Sign Up</h2>
+
+<form (ngSubmit)="signupSubmit()">
+  <label>
+    Username:
+    <input [(ngModel)]="signupForm.username" type="text" name="userame" placeholder="Yessica" />
+  </label>
+  <br />
+
+  <label>
+    Real Name:
+    <input [(ngModel)]="signupForm.realName" type="text" name="realName" placeholder="Yones" />
+  </label>
+  <br />
+
+  <label>
+    Email:
+    <input [(ngModel)]="signupForm.email" type="email" name="email" placeholder="yessica@yones.com" />
+  </label>
+  <br />
+
+  <label>
+    Password:
+    <input [(ngModel)]="signupForm.originalPassword" type="password" name="originalPassword" placeholder="top secret">
+  </label>
+  <br />
+
+  <button>Sign Up</button>
+
+</form>
