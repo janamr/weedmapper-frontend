@@ -71,8 +71,10 @@ export class PlantPin {
 }
 
 export class PlantPinSubmission {
-  brand: string;
   name: string;
-  image: string;
-  specs: Array<string> = [];
+  description: string;
+  imageUrl: string;
+  latitude: number;
+  longitude: number;
+
 }
