@@ -1,0 +1,14 @@
+<p>
+  user-dashboard works!
+</p>
+
+<h2>Your Pins</h2>
+
+<ul>
+  <li *ngFor="let onePin of userPins">
+    <h3>{{onePin.name}}</h3>
+    <p>{{onePin.description}}</p>
+    <img [src]="onePin.imageUrl" style="height: 100px;" />
+    <br />
+  </li>
+</ul>

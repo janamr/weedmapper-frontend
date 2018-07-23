@@ -15,6 +15,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { PlantPinComponent } from './plant-pin/plant-pin.component';
 import { AboutComponent } from './about/about.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { PinDetailsComponent } from './pin-details/pin-details.component';
     FavoritesComponent,
     PlantPinComponent,
     AboutComponent,
-    PinDetailsComponent
+    PinDetailsComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

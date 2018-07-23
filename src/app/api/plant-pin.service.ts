@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const backendUrl = "http://localhost:3000";
+import { environment } from "../../environments/environment";
+
+const { backendUrl } = environment;
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +17,21 @@ export class PlantPinService {
   ) { }
 
     // GET /api/phones
-    getPlantPinsList() {
+    getUserPinsList() {
       // return the Promise of the request (component will ".then()" & ".catch()")
       return this.myHttpServ
       .get(
-        `${backendUrl}/plantPins`,
+        `${backendUrl}/userPins`,
+        { withCredentials: true }
+      )
+      .toPromise();
+    }
+
+    getAllPinsList() {
+      // return the Promise of the request (component will ".then()" & ".catch()")
+      return this.myHttpServ
+      .get(
+        `${backendUrl}/allPins`,
         { withCredentials: true }
       )
       .toPromise();
@@ -30,7 +43,7 @@ export class PlantPinService {
       // return the Promise of the request (component will ".then()" & ".catch()")
       return this.myHttpServ
       .get(
-        `${backendUrl}/plantPins/${id}`,
+        `${backendUrl}/userPins/${id}`,
         { withCredentials: true }
        )
       .toPromise();

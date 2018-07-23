@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.service';
 
+
 @Component({
-  selector: 'app-map-page',
-  templateUrl: './map-page.component.html',
-  styleUrls: ['./map-page.component.css']
+  selector: 'app-user-dashboard',
+  templateUrl: './user-dashboard.component.html',
+  styleUrls: ['./user-dashboard.component.css']
 })
-export class MapPageComponent implements OnInit {
-  allPins: Array<PlantPin> = [];
+export class UserDashboardComponent implements OnInit {
+  userPins: Array<PlantPin> = [];
 
   constructor(
     private plantPinServ: PlantPinService,
@@ -16,14 +17,14 @@ export class MapPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fetchAllPins();
+    this.fetchUserPins();
   }
 
-  fetchAllPins() {
-    this.plantPinServ.getAllPinsList()
+  fetchUserPins() {
+    this.plantPinServ.getUserPinsList()
     .then((response: Array<PlantPin>) => {
       // connects the DATA from the API to the COMPONENT state
-      this.allPins = response;
+      this.userPins = response;
     })
     .catch((err) => {
       alert("Sorry! Hanging up on you now.");

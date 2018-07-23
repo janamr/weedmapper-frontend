@@ -13,7 +13,7 @@ export class PlantPinComponent implements OnInit {
   userForm: PlantPinSubmission = new PlantPinSubmission();
 
   constructor(
-    private myPhoneServ: PlantPinService,
+    private plantPinServ: PlantPinService,
     private myRouterServ: Router
   ) { }
 
@@ -22,10 +22,10 @@ export class PlantPinComponent implements OnInit {
 
   plantPinSubmit() {
     // console.log(this.userForm);
-    this.myPhoneServ.postPlantPin(this.userForm)
+    this.plantPinServ.postPlantPin(this.userForm)
     .then((response: PlantPin) => {
       // redirect away to details page of the new phone
-      this.myRouterServ.navigateByUrl(`/map`);
+      this.myRouterServ.navigateByUrl(`/pin-details`);
     })
     .catch((err) => {
       alert("Sorry! hanging up on you now...");

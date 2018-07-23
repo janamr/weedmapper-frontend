@@ -4,7 +4,7 @@
   <nav>
     <a routerLink="">Home</a>
     <a routerLink="/about" class="button">About</a>
-    <a routerLink="/map" class="button">Search</a>
+    <a routerLink="/map-page" class="button">Search</a>
 
     <span *ngIf="!myAuthServ.currentUser">
         <a routerLink="/signup" class="button">Post</a>
@@ -16,6 +16,8 @@
       <b>Welcome back, {{myAuthServ.currentUser.username}}! </b>
       <a routerLink="/plantPin/add" class="button">Post</a>
       <a routerLink="/favorites" class="button">Favorites</a>
+      <a routerLink="/userPage" class="button">User</a>
+
       <button   (click)="logoutClick()" class="button">Log out</button>
     </span>
   </nav>

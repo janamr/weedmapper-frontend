@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+
 import { MapPageComponent } from './map-page/map-page.component';
 import { MapComponent } from './map/map.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { PlantPinComponent } from './plant-pin/plant-pin.component';
 import { AboutComponent } from './about/about.component';
+import { PinDetailsComponent } from './pin-details/pin-details.component';
 
 
 import { LoginComponent } from './login/login.component';
@@ -14,10 +17,11 @@ import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  // { path: "phones", component: PhoneListPageComponent },
+  { path: "userPage", component: UserDashboardComponent },
   { path: "plantPin/add", component: PlantPinComponent},
   { path: "favorites", component: FavoritesComponent},
   { path: "about", component: AboutComponent},
+  { path: "pin-details", component: PinDetailsComponent},
 
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },

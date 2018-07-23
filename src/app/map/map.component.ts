@@ -10,15 +10,7 @@ import { AgmCoreModule } from '@agm/core';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css'],
-  styles: [`
-  agm-map {
-    height: 600px; width: 50%;
-  }
-  `],
-  template: `
-  <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
-  `
+  styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
 

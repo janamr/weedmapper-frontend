@@ -1,5 +1,23 @@
 <p>
   pin-details works!
-
-  <a href="/favorites-add">❤️</a>
 </p>
+
+<h2>plant pin location details</h2>
+
+<h3>{{plantPinItem?.name}}</h3>
+
+<p>by <i>{{plantPinItem?.description}}</i></p>
+
+<img [src]="plantPinItem?.imageUrl" style="width: 100px" />
+
+<a href="/favorites-add">❤️</a>
+<a href="/comments/add">Comment</a>
+
+<a routerLink="/favorites-add" class="button">❤️</a>
+<a routerLink="/comments-add" class="button">Comment</a>
+
+
+<div>
+  <h3>Danger Zone</h3>
+  <button (click)="deleteClick()" class="button">Delete this phone</button>
+</div>
