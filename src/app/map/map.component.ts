@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 
 import { ViewChild } from '@angular/core';
-// import { } from '@types/googlemaps';
+import { } from '@types/googlemaps';
 
 export class AppComponent {
   @ViewChild('gmap') gmapElement: any;

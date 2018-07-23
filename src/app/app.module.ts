@@ -13,6 +13,8 @@ import { MapPageComponent } from './map-page/map-page.component';
 import { AgmCoreModule } from '@agm/core';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { PlantPinComponent } from './plant-pin/plant-pin.component';
+import { AboutComponent } from './about/about.component';
+import { PinDetailsComponent } from './pin-details/pin-details.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { PlantPinComponent } from './plant-pin/plant-pin.component';
     SignupComponent,
     MapPageComponent,
     FavoritesComponent,
-    PlantPinComponent
+    PlantPinComponent,
+    AboutComponent,
+    PinDetailsComponent
   ],
   imports: [
     BrowserModule,

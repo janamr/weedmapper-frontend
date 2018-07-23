@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorites.component.css']
 })
 export class FavoritesComponent implements OnInit {
+  // favorites: Array<Favorite> = [];
+
 
   constructor() { }
 
   ngOnInit() {
+    // this.fetchFavorites();
   }
 
 }
