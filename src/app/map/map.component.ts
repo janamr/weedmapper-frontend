@@ -15,6 +15,8 @@ export class MapComponent implements OnInit {
   lat: number = 48.871757;
   lng: number = 2.311004;
 
+  ngOnInit() {}
+
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`)
   }
