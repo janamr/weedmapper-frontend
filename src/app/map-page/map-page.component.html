@@ -8,8 +8,8 @@
 
 <ul>
   <li *ngFor="let onePin of allPins">
-    <h3>{{onePin.name}}</h3>
-    <p>{{onePin.description}}</p>
+    <h3>{{onePin?.name}}</h3>
+    <p>{{onePin?.description}}</p>
     <img [src]="onePin.imageUrl" style="height: 100px;" />
     <br />
     <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>

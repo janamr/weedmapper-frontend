@@ -96,10 +96,12 @@ export class PlantPinService {
 
 export class PlantPin {
   _id: string;
-  brand: string;
+  latitude: number;
+  longitude: number;
+  draggable: boolean = false;
   name: string;
-  image: string;
-  specs: Array<string>;
+  imageUrl: string;
+  description: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -110,5 +112,4 @@ export class PlantPinSubmission {
   imageUrl: string;
   latitude: number;
   longitude: number;
-
 }

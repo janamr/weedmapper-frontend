@@ -11,6 +11,7 @@ import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.
 export class UserDashboardComponent implements OnInit {
   userPins: Array<PlantPin> = [];
   userFavorites: Array<PlantPin> = [];
+  userComments: Array<Comment> = [];
 
   constructor(
     private plantPinServ: PlantPinService,

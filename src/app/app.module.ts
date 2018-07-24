@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -42,8 +43,11 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     CommonModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAjkKUz36__Rld63_mIoL4zKJxf7LA-4lI'
-    })
+      apiKey: 'AIzaSyAjkKUz36__Rld63_mIoL4zKJxf7LA-4lI',
+      libraries: ["places"]
+    }),
+    // AgmSnazzyInfoWindowModule
+    // ReactiveFormsModule
   ],
   providers: [],
   // declarations: [ AppComponent ],

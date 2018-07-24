@@ -1,6 +1,5 @@
 
 <h1>map</h1>
-<p><a href="https://angular-maps.com/" target="_blank">Official Website</a></p>
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <!-- <agm-map [latitude]="lat" [longitude]="lng">
@@ -13,29 +12,26 @@
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
-  [zoomControl]="false"
-  (mapClick)="mapClicked($event)">
+  [zoomControl]="false">
 
   <agm-marker
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)">
+      *ngFor="let plantPin of allPins; let i = index"
+      (markerClick)="clickedMarker(plantPin.name, i)"
+      [latitude]="plantPin.latitude"
+      [longitude]="plantPin.longitude">
+<!--
+      <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+          <ng-template>
+            Snazzy Info Window!
+          </ng-template>
+        </agm-snazzy-info-window> -->
 
     <agm-info-window>
-      <strong>InfoWindow content</strong>
+      <h3>{{plantPin.name}}</h3>
+      <p>{{plantPin.description}}</p>
+      <img [src]="plantPin.imageUrl" />
     </agm-info-window>
 
   </agm-marker>
-
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
-      [radius]="5000"
-      [fillColor]="'red'"
-      [circleDraggable]="true"
-      [editable]="true">
-  </agm-circle>
 
 </agm-map>

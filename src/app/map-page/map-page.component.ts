@@ -26,6 +26,11 @@ export class MapPageComponent implements OnInit {
     this.fetchAllPins();
   }
 
+  checkPlantArray() {
+    console.log( 'IS IT EMPTY?=========' );
+    console.log( this.allPins );
+  }
+
   fetchAllPins() {
     this.plantPinServ.getAllPinsList()
     .then((response: Array<PlantPin>) => {

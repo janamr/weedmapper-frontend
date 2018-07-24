@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PinDetailsComponent implements OnInit {
 
+  plantPinItem: any = {}
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  deleteClick() {}
 }

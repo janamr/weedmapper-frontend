@@ -2,6 +2,10 @@
   <h1>weedmapper</h1>
 
   <nav>
+      <div id="pac-container">
+          <input #searchTag id="pac-input" type="text"
+              placeholder="Enter a location">
+        </div>
     <a routerLink="">Home</a>
     <a routerLink="/about" class="button">About</a>
     <a routerLink="/map-page" class="button">Search</a>
@@ -28,3 +32,5 @@
 <footer>
   <p>Made with ✈️ at Ironhack</p>
 </footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjkKUz36__Rld63_mIoL4zKJxf7LA-4lI&libraries=places&callback=initMap"></script>
