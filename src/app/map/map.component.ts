@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MouseEvent } from '@agm/core';
+
 import { AgmCoreModule } from '@agm/core';
-
-
-
-// import { ViewChild } from '@angular/core';
-// import { google } from '@types/googlemaps';
 
 @Component({
   selector: 'app-map',
@@ -13,38 +10,62 @@ import { AgmCoreModule } from '@agm/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  zoom: number = 8;
+  // initial center position - change to include all pins?
+  lat: number = 48.871757;
+  lng: number = 2.311004;
 
-  // @ViewChild('gmap') gmapElement: any;
-  // map: google.maps.Map;
-  lat: number = 56.678418;
-  lng: number = 10.809007;
-
-  constructor(
-    public myRouterServ: Router
-  ) { }
-
-  ngOnInit() {
+  clickedMarker(label: string, index: number) {
+    console.log(`clicked the marker: ${label || index}`)
   }
 
-
-  // setMapType(mapTypeId: string) {
-  //     this.map.setMapTypeId(mapTypeId)
-  //   }
-
-
+  mapClicked($event: MouseEvent) {
+    this.markers.push({
+      lat: $event.coords.lat,
+      lng: $event.coords.lng,
+      draggable: true
+    });
   }
 
-  // export class MapComponent {
-  //   // @ViewChild('gmap') gmapElement: any;
-  //   // map: google.maps.Map;
+  markerDragEnd(m: marker, $event: MouseEvent) {
+    console.log('dragEnd', m, $event);
+  }
 
+  markers: marker[] = [
+	  {
+		  lat: 51.673858,
+		  lng: 7.815982,
+		  label: 'A',
+		  draggable: true
+	  },
+	  {
+		  lat: 51.373858,
+		  lng: 7.215982,
+		  label: 'B',
+		  draggable: false
+	  },
+	  {
+		  lat: 51.723858,
+		  lng: 7.895982,
+		  label: 'C',
+		  draggable: true
+	  }
+  ]
+}
 
-  //   ngOnInit() {
-  //     var mapProp = {
-  //       center: new google.maps.LatLng(18.5793, 73.8143),
-  //       zoom: 15,
-  //       mapTypeId: google.maps.MapTypeId.ROADMAP
-  //     };
-  //     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-  //   }
-  // }
+// just an interface for type safety.
+interface marker {
+	lat: number;
+	lng: number;
+	label?: string;
+	draggable: boolean;
+}
+
+//   constructor(
+//     public myRouterServ: Router
+//   ) { }
+
+//   ngOnInit() {
+//   }
+
+// }

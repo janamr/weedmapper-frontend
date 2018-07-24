@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { PlantPinSubmission, PlantPin, PlantPinService, plantPinId } from '../api/plant-pin.service';
+import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.service';
 import { MapComponent } from '../map/map.component';
 import { CATCH_ERROR_VAR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
 
@@ -15,7 +15,7 @@ import { CATCH_ERROR_VAR } from '../../../node_modules/@angular/compiler/src/out
 })
 export class MapPageComponent implements OnInit {
   allPins: Array<PlantPin> = [];
-  favorites: Array<UserFavorites> = [];
+  // favorites: Array<UserFavorites> = [];
 
   constructor(
     private plantPinServ: PlantPinService,
