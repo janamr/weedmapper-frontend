@@ -25,7 +25,7 @@ export class PlantPinComponent implements OnInit {
     this.plantPinServ.postPlantPin(this.userForm)
     .then((response: PlantPin) => {
       // redirect away to details page of the new phone
-      this.myRouterServ.navigateByUrl(`/pin-details`);
+      this.myRouterServ.navigateByUrl(`/userPage`);
     })
     .catch((err) => {
       alert("Sorry! hanging up on you now...");

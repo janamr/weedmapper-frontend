@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.service';
+import { NgModule } from '@angular/core';
+
+import { PlantPinSubmission, PlantPin, PlantPinService, plantPinId } from '../api/plant-pin.service';
+import { MapComponent } from '../map/map.component';
+import { CATCH_ERROR_VAR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
+
+
 
 @Component({
   selector: 'app-map-page',
@@ -9,6 +15,7 @@ import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.
 })
 export class MapPageComponent implements OnInit {
   allPins: Array<PlantPin> = [];
+  favorites: Array<UserFavorites> = [];
 
   constructor(
     private plantPinServ: PlantPinService,
@@ -29,6 +36,20 @@ export class MapPageComponent implements OnInit {
       alert("Sorry! Hanging up on you now.");
       console.log(err);
     });
+  }
+
+  addToFavorites( id ) {
+    console.log(id);
+    this.plantPinServ.postToFavorites( id )
+    .then(() => {
+      this.ngOnInit();
+    })
+    .catch((err) => {
+      alert("not working...");
+      console.log(err);
+    });
+    // COMPLETE THE THEN AND THE CATCH
+    // YOU CAN DO IT :)
   }
 
 }

@@ -10,6 +10,7 @@ import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.
 })
 export class UserDashboardComponent implements OnInit {
   userPins: Array<PlantPin> = [];
+  userFavorites: Array<PlantPin> = [];
 
   constructor(
     private plantPinServ: PlantPinService,
@@ -18,6 +19,7 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.fetchUserPins();
+    this.fetchUserFavorites();
   }
 
   fetchUserPins() {
@@ -31,5 +33,19 @@ export class UserDashboardComponent implements OnInit {
       console.log(err);
     });
   }
+
+  fetchUserFavorites() {
+    this.plantPinServ.getUserFavoritesList()
+    .then((response: Array<PlantPin>) => {
+      // connects the DATA from the API to the COMPONENT state
+      this.userFavorites = response;
+      console.log(this.userFavorites);
+    })
+    .catch((err) => {
+      alert("Sorry! Hanging up on you now.");
+      console.log(err);
+    });
+  }
+
 
 }

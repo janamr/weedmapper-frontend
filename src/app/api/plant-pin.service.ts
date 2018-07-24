@@ -71,6 +71,27 @@ export class PlantPinService {
     )
       .toPromise();
     }
+
+    getUserFavoritesList () {
+      return this.myHttpServ
+      .get(
+        `${backendUrl}/user-favorites`,
+      { withCredentials: true }
+      )
+      .toPromise();
+    }
+
+
+    postToFavorites( id ) {
+      console.log(id);
+      return this.myHttpServ
+      .post(
+        `${backendUrl}/process-favorites`,
+        {id},
+      { withCredentials: true }
+      )
+      .toPromise();
+    }
   }
 
 export class PlantPin {

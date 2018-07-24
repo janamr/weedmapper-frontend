@@ -2,6 +2,8 @@
   map-page works!
 </p>
 
+<app-map></app-map>
+
 <h2>Recently Posted</h2>
 
 <ul>
@@ -10,8 +12,9 @@
     <p>{{onePin.description}}</p>
     <img [src]="onePin.imageUrl" style="height: 100px;" />
     <br />
-    <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a>
-    <a routerLink="/favorites-add" class="button">❤️</a>
+    <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
+    <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
+    <a (click)="addToFavorites(onePin._id)">❤️</a><br>
     <a routerLink="/comments-add" class="button">Comment</a>
   </li>
 </ul>

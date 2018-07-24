@@ -27,6 +27,7 @@ export class AppComponent {
     this.myAuthServ.logout()
     .catch((err) => {
       alert("Sorry! issues wih your logout")
+      // redirect to index
       console.log(err);
     });
   }

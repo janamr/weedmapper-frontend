@@ -11,7 +11,6 @@ import { PlantPinComponent } from './plant-pin/plant-pin.component';
 import { AboutComponent } from './about/about.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
 
-
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
