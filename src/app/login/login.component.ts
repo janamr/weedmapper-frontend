@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.myAuthServ.postLogin(this.loginForm)
     .then((response) => {
       // redirect away to home page (import router service to do a redirect -- ^^ public myRouterServ)
-      this.myRouterServ.navigateByUrl("/")
+      this.myRouterServ.navigateByUrl("/userPage")
     })
     .catch((err) => {
       alert("Sorry! problems with login...");

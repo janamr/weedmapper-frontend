@@ -4,6 +4,7 @@ import { MouseEvent } from '@agm/core';
 import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.service';
 
 import { AgmCoreModule } from '@agm/core';
+import { AuthService } from '../api/auth.service';
 
 @Component({
   selector: 'app-map',
@@ -20,7 +21,8 @@ export class MapComponent implements OnInit {
 
   constructor(
     private plantPinServ: PlantPinService,
-    public myRouterServ: Router
+    public myRouterServ: Router,
+    public myAuthServ: AuthService
   ) { }
 
   ngOnInit() {

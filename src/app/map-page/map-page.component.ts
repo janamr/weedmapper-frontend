@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.service';
 import { MapComponent } from '../map/map.component';
 import { CATCH_ERROR_VAR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
+import { AuthService } from '../api/auth.service';
 
 
 
@@ -19,7 +20,8 @@ export class MapPageComponent implements OnInit {
 
   constructor(
     private plantPinServ: PlantPinService,
-    private myRouterServ: Router
+    private myRouterServ: Router,
+    public myAuthServ: AuthService
   ) { }
 
   ngOnInit() {

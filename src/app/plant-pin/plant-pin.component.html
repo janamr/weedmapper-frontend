@@ -1,46 +1,49 @@
-<h2>Post your findings</h2>
+<div class="container">
 
-<p>share the wealth!</p>
+  <div class="form">
+      <h2>Post your findings</h2>
 
-<form (ngSubmit)="plantPinSubmit()">
-  <label>
-    Plant name:
-    <input [(ngModel)]="userForm.name" name="plantName" type="text" placeholder="name of plant">
-  </label>
-  <br />
+      <p>share the wealth!</p>
 
-  <label>
-    Description:
-    <input [(ngModel)]="userForm.description" name="description" type="text" placeholder="elaborate on location, quality, etc.">
-  </label>
-  <br />
-
-  <label>
-    Image URL:
-    <input [(ngModel)]="userForm.imageUrl" name="imageUrl" type="text" placeholder="paste image URL">
-  </label>
-  <br />
-
-  <!-- <label>
-      Location:
-      <input [(ngModel)]="userForm.location" name="location" type="text" placeholder="Face ID" /> -->
-        <!-- values for these will be set by our Place Autocomplete -->
-      <!-- <input type="hidden" name="latitude" class="lat-input" />
-      <input type="hidden" name="longitude" class="long-input" />
-    </label>
-    <br /> -->
-
-    <label>
-        latitude:
-        <input [(ngModel)]="userForm.latitude" name="latitude" type="number" placeholder="latitude" />
-      </label>
-      <br />
-
-      <label>
-          longitude:
-          <input [(ngModel)]="userForm.longitude" name="longitude" type="number" placeholder="longitude" />
+      <form (ngSubmit)="plantPinSubmit()" >
+        <label>
+          Plant name:
+          <input [(ngModel)]="userForm.name" name="plantName" type="text" placeholder="name of plant">
         </label>
         <br />
 
-  <button>Post this plant</button>
-</form>
+        <label>
+          Description:
+          <input [(ngModel)]="userForm.description" name="description" type="text" placeholder="elaborate on location, quality, etc.">
+        </label>
+        <br />
+
+        <label>
+          Image URL:
+          <input [(ngModel)]="userForm.imageUrl" name="imageUrl" type="text" placeholder="paste image URL">
+        </label>
+        <br />
+
+          <label>
+              latitude:
+              <input [(ngModel)]="userForm.latitude" name="latitude" type="number" placeholder="latitude" />
+            </label>
+            <br />
+
+            <label>
+                longitude:
+                <input [(ngModel)]="userForm.longitude" name="longitude" type="number" placeholder="longitude" />
+              </label>
+              <br />
+
+        <button>Post this plant</button>
+      </form>
+
+  </div>
+
+    <div class="map-component">
+        <app-map></app-map>
+    </div>
+
+</div>
+

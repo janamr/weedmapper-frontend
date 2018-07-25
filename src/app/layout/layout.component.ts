@@ -1,31 +1,29 @@
-import { Component, ViewChild, ElementRef, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { MapsAPILoader } from '@agm/core';
 import { } from '@types/googlemaps';
-import { PlantPinSubmission, PlantPin, PlantPinService } from '../api/plant-pin.service';
+
 import { AuthService } from '../api/auth.service';
 
+
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css'
-]
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.css']
 })
-export class LandingPageComponent implements OnInit {
-  allPins: Array<PlantPin> = [];
+export class LayoutComponent implements OnInit {
   @ViewChild('searchTag') searchInput: ElementRef;
   autoComp: google.maps.places.Autocomplete;
 
   constructor(
-    private plantPinServ: PlantPinService,
     public myAuthServ: AuthService,
+    public myRouterServ: Router,
     private mapsApiLoader: MapsAPILoader,
     private myRouter: Router,
     private myZone: NgZone
   ) { }
 
   ngOnInit() {
-    this.fetchAllPins();
     this.mapsApiLoader.load().then(() => {
       this.autoComp = new google.maps.places.Autocomplete(this.searchInput.nativeElement);
 
@@ -39,16 +37,15 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  fetchAllPins() {
-    this.plantPinServ.getAllPinsList()
-    .then((response: Array<PlantPin>) => {
-      // connects the DATA from the API to the COMPONENT state
-      this.allPins = response;
-    })
+  logoutClick() {
+    this.myAuthServ.logout()
+    .then((response) => {
+      // redirect away to home page (import router service to do a redirect -- ^^ public myRouterServ)
+      this.myRouterServ.navigateByUrl("/")
     .catch((err) => {
-      alert("Sorry! Hanging up on you now.");
+      alert("Sorry! issues wih your logout")
+      // redirect to index
       console.log(err);
     });
   }
-
 }

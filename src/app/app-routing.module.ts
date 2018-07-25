@@ -13,22 +13,28 @@ import { PinDetailsComponent } from './pin-details/pin-details.component';
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent },
-  { path: "userPage", component: UserDashboardComponent },
-  { path: "plantPin/add", component: PlantPinComponent},
-  { path: "favorites", component: FavoritesComponent},
-  { path: "about", component: AboutComponent},
-  { path: "pin-details", component: PinDetailsComponent},
+  {
+    path: "",
+    component: LayoutComponent,
+    children: [
+      { path: "userPage", component: UserDashboardComponent },
+      { path: "plantPin/add", component: PlantPinComponent},
+      { path: "favorites", component: FavoritesComponent},
+      { path: "about", component: AboutComponent},
+      { path: "pin-details", component: PinDetailsComponent},
 
-  { path: "login", component: LoginComponent },
-  { path: "signup", component: SignupComponent },
-  { path: "map-page", component: MapPageComponent },
-  { path: "map", component: MapComponent },
+      { path: "login", component: LoginComponent },
+      { path: "signup", component: SignupComponent },
+      { path: "map-page", component: MapPageComponent },
+      { path: "map", component: MapComponent },
+      // { path: "**", component: NotFoundPageComponent }
+    ]
+  },
 
-
-  // { path: "**", component: NotFoundPageComponent }
 ];
 
 @NgModule({

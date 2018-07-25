@@ -1,23 +1,60 @@
-<h2>Home Page</h2>
+  <div class="body text-center">
 
-<p>find free, locally-sourced, nutrient-dense REAL food near you!</p>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <a class="masthead-brand" style="" href="/">#weedmapper</a>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link" href="/map-page">Search</a>
+            <a class="nav-link" href="/login">Post</a>
+            <a class="nav-link" href="/login">Log In</a>
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </nav>
+        </div>
+      </header>
 
-<div id="pac-container">
-    <input #searchTag id="pac-input" type="text"
-        placeholder="Enter a location">
-  </div>
 
-<a routerLink="/map-page" class="button">Browse nearby</a>
 
-<ul>
-    <li *ngFor="let onePin of allPins">
-      <h3>{{onePin?.name}}</h3>
-      <p>{{onePin?.description}}</p>
-      <img [src]="onePin.imageUrl" style="height: 100px;" />
-      <br />
-      <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
-      <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
-      <a (click)="addToFavorites(onePin._id)">❤️</a><br>
-      <a routerLink="/comments-add" class="button">Comment</a>
-    </li>
-  </ul>
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">weedmapper</h1>
+        <p class="lead">find free, locally-sourced, nutrient-dense REAL food near you!</p>
+
+        <div class="centerer">
+          <div class="search-wrapper">
+            <div class="form-group" id="pac-container">
+            <input #searchTag id="pac-input" type="text" class="form-control mr-sm-2" placeholder="Enter a location">
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        </p> -->
+      </main>
+    </div>
+    </div>
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+        <h3 class="display-5">Recent findings:</h3>
+    </div>
+    <div class="card-deck mb-3 text-center">
+        <ul *ngFor="let onePin of allPins">
+          <div class="card mb-4 box-shadow" style="width: 12rem;">
+                <!-- <div class="view overlay">
+                <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
+               </div> -->
+          <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-text">{{onePin?.name}}</h5>
+                <p class="card-text">{{onePin?.description}}</p>
+            </div>
+          </div>
+          </ul>
+    </div>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Footer</p>
+        </div>
+      </footer>

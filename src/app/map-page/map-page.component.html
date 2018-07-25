@@ -1,20 +1,26 @@
-<p>
-  map-page works!
-</p>
 
 <app-map></app-map>
 
 <h2>Recently Posted</h2>
 
-<ul>
-  <li *ngFor="let onePin of allPins">
-    <h3>{{onePin?.name}}</h3>
-    <p>{{onePin?.description}}</p>
-    <img [src]="onePin.imageUrl" style="height: 100px;" />
-    <br />
-    <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
-    <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
-    <a (click)="addToFavorites(onePin._id)">❤️</a><br>
-    <a routerLink="/comments-add" class="button">Comment</a>
-  </li>
-</ul>
+<div class="card-deck mb-3 text-center">
+    <ul *ngFor="let onePin of allPins">
+      <div class="card mb-4 box-shadow" style="width: 12rem;">
+            <!-- <div class="view overlay">
+            <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
+           </div> -->
+      <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-text">{{onePin?.name}}</h5>
+            <p class="card-text">{{onePin?.description}}</p>
+<!--
+            <span *ngIf="myAuthServ.currentUser">
+
+            <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
+            <a (click)="addToFavorites(onePin._id)">❤️</a><br>
+            <a routerLink="/comments-add" class="button">Comment</a>
+            </span> -->
+        </div>
+      </div>
+      </ul>
+</div>

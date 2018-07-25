@@ -19,6 +19,7 @@ import { PlantPinComponent } from './plant-pin/plant-pin.component';
 import { AboutComponent } from './about/about.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -34,7 +35,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     PlantPinComponent,
     AboutComponent,
     PinDetailsComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
