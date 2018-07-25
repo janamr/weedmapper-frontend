@@ -53,8 +53,6 @@ export class MapPageComponent implements OnInit {
       alert("not working...");
       console.log(err);
     });
-    // COMPLETE THE THEN AND THE CATCH
-    // YOU CAN DO IT :)
   }
 
 }

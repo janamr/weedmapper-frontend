@@ -2,4 +2,22 @@
 
 <p>find free, locally-sourced, nutrient-dense REAL food near you!</p>
 
-<a routerLink="/phones" class="button">Browse nearby</a>
+<div id="pac-container">
+    <input #searchTag id="pac-input" type="text"
+        placeholder="Enter a location">
+  </div>
+
+<a routerLink="/map-page" class="button">Browse nearby</a>
+
+<ul>
+    <li *ngFor="let onePin of allPins">
+      <h3>{{onePin?.name}}</h3>
+      <p>{{onePin?.description}}</p>
+      <img [src]="onePin.imageUrl" style="height: 100px;" />
+      <br />
+      <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
+      <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
+      <a (click)="addToFavorites(onePin._id)">❤️</a><br>
+      <a routerLink="/comments-add" class="button">Comment</a>
+    </li>
+  </ul>
