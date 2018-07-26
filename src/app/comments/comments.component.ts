@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent implements OnInit {
+  comments: Array<Comment> = [];
   commentForm: CommentSubmission = new CommentSubmission();
 
   constructor(
@@ -20,17 +21,28 @@ export class CommentsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.fetchComments();
+  }
+
+  fetchComments() {
+    // call service method that connects to plant comments API
+      // then set our comments array
   }
 
   leaveComment() {
     this.plantPinServ.postComment(this.commentForm)
-    .then((response) => {
-      this.myRouterServ.navigateByUrl("/map-page")
-    })
+      .then((response) => {
+        // do something if it works maybe
+        this.fetchComments();
+      })
     .catch((err) => {
       alert("oops! problems with comment...");
       console.log(err);
     });
   }
+
+  // fetchPlantPinId() {
+  //   return this.plantPinServ.returnPPID();
+  // }
 
 }

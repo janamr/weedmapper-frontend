@@ -49,6 +49,10 @@ export class MapComponent implements OnInit {
     this.plantPinServ.longitude = lng;
     this.clickPin = { lat, lng };
   }
+
+  openComments(id) {
+    this.plantPinServ.savePinId(id);
+  }
 }
 
 // var marker = new google.maps.Marker({

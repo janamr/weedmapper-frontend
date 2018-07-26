@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from "../../environments/environment";
+import { User } from './auth.service';
 
 const { backendUrl } = environment;
 
@@ -14,6 +15,8 @@ export class PlantPinService {
   longitude: number;
 
   mapLocation: google.maps.LatLng;
+
+  clickedPlantPinId;
 
   constructor(
     private myHttpServ: HttpClient
@@ -128,12 +131,22 @@ export class PlantPinService {
       return this.myHttpServ
       .post(
         `${backendUrl}/process-comments`,
-        // {id},
+        {userComment: commentInfo.userComment, plantPin: this.clickedPlantPinId},
         { withCredentials: true }
       )
       .toPromise();
     }
+
+    savePinId( id ) {
+      this.clickedPlantPinId = id;
+    }
+
+    returnPPID() {
+      const id = this.clickedPlantPinId;
+      return id;
+    }
   }
+
 
 export class PlantPin {
   _id: string;
@@ -153,6 +166,12 @@ export class PlantPinSubmission {
   imageUrl: string;
   latitude: number;
   longitude: number;
+}
+
+export class Comment {
+  user: User;
+  plantPin: PlantPin;
+  userComment: string;
 }
 
 export class CommentSubmission {

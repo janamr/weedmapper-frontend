@@ -23,7 +23,7 @@
             <a [routerLink]="['/allPins', plantPin._id]" class="button">Details</a><br>
             <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
             <a (click)="addToFavorites(plantPin._id)">❤️</a><br>
-            <a routerLink="/comments">Comment</a>
+            <a (click)="openComments(plantPin._id)">Comment</a>
         </span>
       </agm-info-window>
 

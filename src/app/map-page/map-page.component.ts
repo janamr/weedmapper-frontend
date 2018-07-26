@@ -19,7 +19,7 @@ export class MapPageComponent implements OnInit {
   // favorites: Array<UserFavorites> = [];
 
   constructor(
-    private plantPinServ: PlantPinService,
+    public plantPinServ: PlantPinService,
     private myRouterServ: Router,
     public myAuthServ: AuthService
   ) { }
@@ -57,9 +57,15 @@ export class MapPageComponent implements OnInit {
     });
   }
 
-  // addComment( id ) {
-  //   // this.plantPinServ.postComment( id )
-  //   .then(())
-  // }
+  addComment( id ) {
+    this.plantPinServ.savePinId( id )
+    .then(() => {
+
+    })
+    .catch(( err ) => {
+      alert('shit');
+      console.log( err );
+    })
+  }
 
 }
