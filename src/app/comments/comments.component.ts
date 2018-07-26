@@ -26,7 +26,16 @@ export class CommentsComponent implements OnInit {
 
   fetchComments() {
     // call service method that connects to plant comments API
-      // then set our comments array
+    this.plantPinServ.getUserCommentsList()
+        // then set our comments array
+    .then((response: Array<Comment>) => {
+      // connects the DATA from the API to the COMPONENT state
+      this.comments = response;
+    })
+    .catch((err) => {
+      alert("Sorry! commenting problems.");
+      console.log(err);
+    });
   }
 
   leaveComment() {

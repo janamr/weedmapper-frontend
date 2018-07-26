@@ -59,13 +59,13 @@ export class MapPageComponent implements OnInit {
 
   addComment( id ) {
     this.plantPinServ.savePinId( id )
-    .then(() => {
+    // .then(() => {
 
-    })
-    .catch(( err ) => {
-      alert('shit');
-      console.log( err );
-    })
+    // })
+    // .catch(( err ) => {
+    //   alert('shit');
+    //   console.log( err );
+    // })
   }
 
 }
