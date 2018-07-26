@@ -20,6 +20,8 @@ import { AboutComponent } from './about/about.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CommentsComponent } from './comments/comments.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 
@@ -36,7 +38,9 @@ import { LayoutComponent } from './layout/layout.component';
     AboutComponent,
     PinDetailsComponent,
     UserDashboardComponent,
-    LayoutComponent
+    LayoutComponent,
+    CommentsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

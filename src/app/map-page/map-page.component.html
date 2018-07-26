@@ -13,13 +13,13 @@
         <div class="card-body">
             <h5 class="card-text">{{onePin?.name}}</h5>
             <p class="card-text">{{onePin?.description}}</p>
-<!--
+
             <span *ngIf="myAuthServ.currentUser">
 
             <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
             <a (click)="addToFavorites(onePin._id)">❤️</a><br>
-            <a routerLink="/comments-add" class="button">Comment</a>
-            </span> -->
+            <a routerLink="/comments" (click)="addComment(onePin._id)" class="button">Comment</a>
+            </span>
         </div>
       </div>
       </ul>

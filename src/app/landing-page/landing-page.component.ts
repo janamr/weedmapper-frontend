@@ -31,6 +31,10 @@ export class LandingPageComponent implements OnInit {
 
       this.autoComp.addListener("place_changed", () => {
         this.myZone.run(() => {
+          const place = this.autoComp.getPlace();
+          this.plantPinServ.mapLocation = place.geometry.location;
+
+
           // app component needs to share the lat/lng of the selected place with a service
           // (the service should then share it with map component)
           this.myRouter.navigateByUrl("/map-page");

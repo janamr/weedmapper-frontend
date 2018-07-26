@@ -1,38 +1,82 @@
-<p>
-  user-dashboard works!
-</p>
+<div class="">
+    <div class="map-wrapper" style="">
+        <app-map></app-map>
+    </div>
+</div>
 
-<app-map></app-map>
 
-<h2>Your Favs</h2>
+<div class="favs">
+    <h2>Your Favs</h2>
 
-<ul>
-  <li *ngFor="let onePin of userFavorites">
-    <h3>{{onePin.name}}</h3>
-    <p>{{onePin.description}}</p>
-    <img [src]="onePin.imageUrl" style="height: 100px;" />
-    <br />
-  </li>
-</ul>
+    <!-- <ul>
+      <li *ngFor="let onePin of userFavorites">
+        <h3>{{onePin.name}}</h3>
+        <p>{{onePin.description}}</p>
+        <img [src]="onePin.imageUrl" style="height: 100px;" />
+        <br />
+      </li>
+    </ul> -->
 
-<h2>Your Comments</h2>
+    <div class="card-deck mb-3 text-center">
+        <ul *ngFor="let onePin of userFavorites">
+          <div class="card mb-4 box-shadow" style="width: 12rem;">
+                <!-- <div class="view overlay">
+                <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
+               </div> -->
+          <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-text">{{onePin.name}}</h5>
+                <p class="card-text">{{onePin.description}}</p>
 
-<ul>
+                <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
+                <a routerLink="/comments" (click)="addComment(onePin._id)" class="button">Comment</a>
+                <button (click)="deleteFavorite(onePin._id)">Delete</button>
+
+            </div>
+          </div>
+          </ul>
+    </div>
+</div>
+
+<!-- <h2>Your Comments</h2> -->
+
+<!-- <ul>
   <li *ngFor="let oneComment of userComments">
-    <h3>{{onePin.name}}</h3>
-    <p>{{onePin.description}}</p>
+    <h3>{{oneComment.comment}}</h3>
     <img [src]="onePin.imageUrl" style="height: 100px;" />
     <br />
   </li>
-</ul>
+</ul> -->
 
+<div class="pins">
+
+</div>
 <h2>Your Pins</h2>
 
-<ul>
+<div class="card-deck mb-3 text-center">
+    <ul *ngFor="let onePin of userPins">
+      <div class="card mb-4 box-shadow" style="width: 12rem;">
+            <!-- <div class="view overlay">
+            <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
+           </div> -->
+      <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-text">{{onePin.name}}</h5>
+            <p class="card-text">{{onePin.description}}</p>
+            <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
+            <a routerLink="/comments" (click)="addComment(onePin._id)">Comment</a>
+            <button (click)="deletePinForever(onePin._id)">Delete</button>
+
+        </div>
+      </div>
+      </ul>
+</div>
+
+<!-- <ul>
   <li *ngFor="let onePin of userPins">
     <h3>{{onePin.name}}</h3>
     <p>{{onePin.description}}</p>
     <img [src]="onePin.imageUrl" style="height: 100px;" />
     <br />
   </li>
-</ul>
+</ul> -->

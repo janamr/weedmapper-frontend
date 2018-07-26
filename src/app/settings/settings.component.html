@@ -1,0 +1,69 @@
+
+<div class="container" style="width: 30%; margin: 0 auto; text-align: center">
+
+    <div class="profileUpdate" >
+        <h4>Update profile   </h4>
+
+        <form (ngSubmit)="updateImage()">
+            <label>
+              Image:
+              <input [(ngModel)]="settingsForm.imageUpload" type="text" name="imageUpload" placeholder="upload image" />
+            </label>
+            </form>
+
+            <form (ngSubmit)="updateAbout()">
+            <label>
+              About me:
+              <textarea class="form-control" rows="5" id="aboutMe" style="width: 300px" placeholder="Description.."></textarea>
+              <!-- <input [(ngModel)]="settingsForm.aboutMe" type="text" name="aboutMe" placeholder="Description.." /> -->
+            </label>
+            <br />
+            <button>Update</button>
+          </form>
+    </div>
+
+    <div class="credentialsUpdate">
+
+    </div>
+    <hr />
+
+    <h4>Update credentials   </h4>
+
+    <form (ngSubmit)="changeUsername()">
+        <label>
+          <input [(ngModel)]="settingsForm.username" type="text" name="changeUsername" placeholder="update username" />
+        </label>
+        <button>Save</button>
+        <br />
+    </form>
+
+        <form (ngSubmit)="changeName()">
+
+        <label>
+          <input [(ngModel)]="settingsForm.realName" type="text" name="changeName" placeholder="update your name" />
+        </label>
+        <button>Save</button>
+        <br />
+    </form>
+
+        <form (ngSubmit)="changeEmal()">
+
+        <label>
+          <input [(ngModel)]="settingsForm.email" type="email" name="changeEmail" placeholder="update email address" />
+        </label>
+        <button>Save</button>
+        <br />
+        </form>
+
+        <form (ngSubmit)="changeOriginalPassword()">
+
+        <label>
+          <input [(ngModel)]="settingsForm.originalPassword" type="password" name="changeOriginalPassword" placeholder="update password">
+        </label>
+        <button>Save</button>
+        <br />
+
+      </form>
+</div>
+
+

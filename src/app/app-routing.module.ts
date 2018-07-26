@@ -10,6 +10,9 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { PlantPinComponent } from './plant-pin/plant-pin.component';
 import { AboutComponent } from './about/about.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
+import { CommentsComponent } from './comments/comments.component';
+import { SettingsComponent } from './settings/settings.component';
+
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -26,6 +29,8 @@ const routes: Routes = [
       { path: "favorites", component: FavoritesComponent},
       { path: "about", component: AboutComponent},
       { path: "pin-details", component: PinDetailsComponent},
+      { path: "comments", component: CommentsComponent},
+      { path: "settings", component: SettingsComponent},
 
       { path: "login", component: LoginComponent },
       { path: "signup", component: SignupComponent },

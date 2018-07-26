@@ -4,6 +4,7 @@ import { MapsAPILoader } from '@agm/core';
 import { } from '@types/googlemaps';
 
 import { AuthService } from '../api/auth.service';
+import { PlantPinService } from '../api/plant-pin.service';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class LayoutComponent implements OnInit {
     public myRouterServ: Router,
     private mapsApiLoader: MapsAPILoader,
     private myRouter: Router,
-    private myZone: NgZone
+    private myZone: NgZone,
+    private plantPinServ: PlantPinService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,9 @@ export class LayoutComponent implements OnInit {
 
       this.autoComp.addListener("place_changed", () => {
         this.myZone.run(() => {
+          const place = this.autoComp.getPlace();
+
+          this.plantPinServ.mapLocation = place.geometry.location;
           // app component needs to share the lat/lng of the selected place with a service
           // (the service should then share it with map component)
           this.myRouter.navigateByUrl("/map-page");
@@ -42,10 +47,13 @@ export class LayoutComponent implements OnInit {
     .then((response) => {
       // redirect away to home page (import router service to do a redirect -- ^^ public myRouterServ)
       this.myRouterServ.navigateByUrl("/")
+
     .catch((err) => {
-      alert("Sorry! issues wih your logout")
+      alert("Sorry! issues with your logout")
       // redirect to index
       console.log(err);
     });
+    });
   }
 }
+

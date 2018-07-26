@@ -1,0 +1,10 @@
+<div class="form-group">
+
+<form (ngSubmit)="leaveComment()">
+    <label for="comment">Leave a comment:</label>
+          <br/>
+          <textarea class="form-control" rows="5" id="comment" style="width: 200px"></textarea>
+          <input [(ngModel)]="commentForm.userComments" type="text" name="userComments" placeholder="Observations about this plant" />
+          <br/>
+          <button>Submit</button>
+</form>

@@ -57,4 +57,9 @@ export class MapPageComponent implements OnInit {
     });
   }
 
+  // addComment( id ) {
+  //   // this.plantPinServ.postComment( id )
+  //   .then(())
+  // }
+
 }

@@ -16,11 +16,12 @@ export class MapComponent implements OnInit {
 
   zoom: number = 8;
   // initial center position - change to include all pins?
-  lat: number = 48.871757;
-  lng: number = 2.311004;
+  // switch to user search location
+
+  clickPin: { lat: number, lng: number};
 
   constructor(
-    private plantPinServ: PlantPinService,
+    public plantPinServ: PlantPinService,
     public myRouterServ: Router,
     public myAuthServ: AuthService
   ) { }
@@ -28,8 +29,6 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.fetchAllPins();
   }
-
-
 
   fetchAllPins() {
     this.plantPinServ.getAllPinsList()
@@ -43,8 +42,12 @@ export class MapComponent implements OnInit {
     });
   }
 
-  clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
+  newPin(location) {
+    // console.log(location, location.constructor.name);
+    const { lat, lng } = location.coords;
+    this.plantPinServ.latitude = lat;
+    this.plantPinServ.longitude = lng;
+    this.clickPin = { lat, lng };
   }
 }
 

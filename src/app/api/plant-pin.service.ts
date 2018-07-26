@@ -10,6 +10,10 @@ const { backendUrl } = environment;
   providedIn: 'root'
 })
 export class PlantPinService {
+  latitude: number;
+  longitude: number;
+
+  mapLocation: google.maps.LatLng;
 
   constructor(
     private myHttpServ: HttpClient
@@ -60,7 +64,6 @@ export class PlantPinService {
       .toPromise();
     }
 
-      // POST /api/phones
     postPlantPin(plantPinInfo: PlantPinSubmission) {
       // return the Promist fo the request (component will ".then()" & ".catch()")
       return this.myHttpServ
@@ -92,6 +95,44 @@ export class PlantPinService {
       )
       .toPromise();
     }
+
+    getMapLat() {
+      if (this.mapLocation) {
+        return this.mapLocation.lat();
+      }
+      else {
+        return 48.871757;
+      }
+    }
+
+    getMapLng() {
+      if (this.mapLocation) {
+        return this.mapLocation.lng();
+      }
+      else {
+        return 2.311004;
+      }
+    }
+
+    getUserCommentsList () {
+      return this.myHttpServ
+      .get(
+        `${backendUrl}/user-comments`,
+      { withCredentials: true }
+      )
+      .toPromise();
+    }
+
+    postComment( commentInfo: CommentSubmission ) {
+      // console.log(id);
+      return this.myHttpServ
+      .post(
+        `${backendUrl}/process-comments`,
+        // {id},
+        { withCredentials: true }
+      )
+      .toPromise();
+    }
   }
 
 export class PlantPin {
@@ -112,4 +153,8 @@ export class PlantPinSubmission {
   imageUrl: string;
   latitude: number;
   longitude: number;
+}
+
+export class CommentSubmission {
+  userComment: string;
 }
