@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="text-align: center">
 
   <div class="form">
       <h2>Post your findings</h2>
@@ -7,31 +7,32 @@
 
       <form (ngSubmit)="plantPinSubmit()" >
         <label>
-          Plant name:
+          <!-- Plant name: -->
           <input [(ngModel)]="userForm.name" name="plantName" type="text" placeholder="name of plant">
         </label>
         <br />
 
         <label>
-          Description:
-          <input [(ngModel)]="userForm.description" name="description" type="text" placeholder="elaborate on location, quality, etc.">
+          <!-- Description: -->
+          <textarea [(ngModel)]="userForm.description" name="description" type="text" placeholder="Detailed description" class="form-control" rows="5" id="comment" style="width: 200px"></textarea>
+
         </label>
         <br />
 
         <label>
-          Image URL:
+          <!-- Image URL: -->
           <input [(ngModel)]="userForm.imageUrl" name="imageUrl" type="text" placeholder="paste image URL">
         </label>
         <br />
 
           <label>
-              latitude:
+              <!-- latitude: -->
               <input [(ngModel)]="plantPinServ.latitude" name="latitude" type="number" placeholder="latitude" />
             </label>
             <br />
 
             <label>
-                longitude:
+                <!-- longitude: -->
                 <input [(ngModel)]="plantPinServ.longitude" name="longitude" type="number" placeholder="longitude" />
               </label>
               <br />

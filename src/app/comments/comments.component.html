@@ -8,7 +8,18 @@
           <button>Submit</button>
 </form>
 
+<h3>{{currentPlant?.name}}</h3>
+<img [src]="currentPlant?.imageUrl" alt="">
 
-<div *ngFor="let oneComment of comments">
-    {{oneComment.userComments}}
-</div>
+
+<div class="card w-50">
+        <div *ngFor="let oneComment of comments">
+
+        <div class="card-body">
+          <h5 class="card-title">{{oneComment?.user.username}}</h5>
+          <p class="card-text">{{oneComment?.userComment}}</p>
+          <a href="#" class="btn">Reply</a>
+        </div>
+      </div>
+
+

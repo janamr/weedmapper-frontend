@@ -1,16 +1,16 @@
 .container {
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   display: flex;
   justify-content: left
 }
 
 .form {
-  border: solid 1px #000;
+  /* border: solid 1px #000; */
   width: 50%
 }
 
 .map-component {
-  border: solid 1px #000;
+  border: solid 2px rgb(180, 180, 180);
   width: 600px;
   height: 600px;
 

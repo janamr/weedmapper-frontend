@@ -17,12 +17,20 @@ import { AuthService } from '../api/auth.service';
 export class MapPageComponent implements OnInit {
   allPins: Array<PlantPin> = [];
   // favorites: Array<UserFavorites> = [];
+  commentIcon: string;
+  favoriteIcon: string;
+  noIcon: string;
+  thumbsIcon: string;
+
 
   constructor(
     public plantPinServ: PlantPinService,
     private myRouterServ: Router,
-    public myAuthServ: AuthService
-  ) { }
+    public myAuthServ: AuthService,
+
+  ) {
+    this.commentIcon = "assets/images/comment.png";
+  }
 
   ngOnInit() {
     this.fetchAllPins();
@@ -55,17 +63,6 @@ export class MapPageComponent implements OnInit {
       alert("not working...");
       console.log(err);
     });
-  }
-
-  addComment( id ) {
-    this.plantPinServ.savePinId( id )
-    // .then(() => {
-
-    // })
-    // .catch(( err ) => {
-    //   alert('shit');
-    //   console.log( err );
-    // })
   }
 
 }

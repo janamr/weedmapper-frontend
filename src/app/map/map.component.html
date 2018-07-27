@@ -15,15 +15,18 @@
         [longitude]="plantPin.longitude">
 
 
-      <agm-info-window>
+      <agm-info-window class="gm-style gm-style-iw">
         <h5>{{plantPin.name}}</h5>
         <p>{{plantPin.description}}</p>
-        <img [src]="plantPin.imageUrl" style="height: 150px;" />
+        <img [src]="plantPin.imageUrl" style="height: 150px; width: 150px" />
+        <br/>
         <span *ngIf="myAuthServ.currentUser">
-            <a [routerLink]="['/allPins', plantPin._id]" class="button">Details</a><br>
             <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
-            <a (click)="addToFavorites(plantPin._id)">❤️</a><br>
-            <a (click)="openComments(plantPin._id)">Comment</a>
+            <button (click)="addToFavorites(plantPin._id)" class="btn btn-light btn-sm"><span class="glyphicon glyphicon-heart"></span>❤</button>
+            <!-- <span class="glyphicon glyphicon-heart" (click)="addToFavorites(plantPin._id)" aria-hidden="true"></span> -->
+            <button [routerLink]="['/comments', plantPin._id]" class="btn btn-light btn-sm"><span class="glyphicon glyphicon-comment">Comment</span></button>
+            <a [routerLink]="['/allPins', plantPin._id]" class="btn btn-light btn-sm">Details</a>
+
         </span>
       </agm-info-window>
 

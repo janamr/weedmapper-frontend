@@ -51,6 +51,7 @@ export class MapComponent implements OnInit {
   }
 
   openComments(id) {
+    // this.plantPinServ.refreshCommentsArray();
     this.plantPinServ.savePinId(id);
   }
 }

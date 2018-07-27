@@ -11,6 +11,7 @@ import { PlantPinComponent } from './plant-pin/plant-pin.component';
 import { AboutComponent } from './about/about.component';
 import { PinDetailsComponent } from './pin-details/pin-details.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 import { LoginComponent } from './login/login.component';
@@ -29,6 +30,8 @@ const routes: Routes = [
       { path: "about", component: AboutComponent},
       { path: "pin-details", component: PinDetailsComponent},
       { path: "settings", component: SettingsComponent},
+      { path: "comments/:plantId", component: CommentsComponent},
+
 
       { path: "login", component: LoginComponent },
       { path: "signup", component: SignupComponent },

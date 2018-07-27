@@ -23,15 +23,7 @@ a:hover {
 }
 
 
-/*
- * Base structure
- */
 
-
-.body {
-  height: 100%;
-  background-color: #333;
-}
 
 .body {
   display: -ms-flexbox;
@@ -39,6 +31,14 @@ a:hover {
   color: rgb(255, 255, 255);
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.body {
+  /* background-image: url("file:///Users/janamr/Desktop/PROJECT3/urban.png");
+  background-repeat: no-repeat center fixed; */
+  /* background-size: cover; */
+  /* height: 100%; */
+  background-color: #333;
 }
 
 .cover-container {

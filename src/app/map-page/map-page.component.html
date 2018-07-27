@@ -1,27 +1,38 @@
-<app-comments *ngIf="plantPinServ.clickedPlantPinId"></app-comments>
+<div class="container" style="text-align: center">
 
-<app-map></app-map>
+<div class="left">
 
-<h2>Recently Posted</h2>
+    <!-- <app-comments *ngIf="plantPinServ.clickedPlantPinId"></app-comments> -->
 
-<div class="card-deck mb-3 text-center">
-    <ul *ngFor="let onePin of allPins">
-      <div class="card mb-4 box-shadow" style="width: 12rem;">
-            <!-- <div class="view overlay">
-            <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
-           </div> -->
-      <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
-        <div class="card-body">
-            <h5 class="card-text">{{onePin?.name}}</h5>
-            <p class="card-text">{{onePin?.description}}</p>
+    <h2>Recently Posted</h2>
 
-            <span *ngIf="myAuthServ.currentUser">
+    <div class="card-deck mb-3 text-center">
+        <ul *ngFor="let onePin of allPins">
+          <div class="card mb-4 box-shadow" style="width: 12rem;">
+                <!-- <div class="view overlay">
+                <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
+               </div> -->
+          <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">{{onePin?.name}}</p>
+                <p class="card-text">{{onePin?.description}}</p>
 
-            <a [routerLink]="['/allPins', onePin._id]" class="button">Details</a><br>
-            <a (click)="addToFavorites(onePin._id)">❤️</a><br>
-            <a routerLink="/comments" (click)="addComment(onePin._id)" class="button">Comment</a>
-            </span>
-        </div>
-      </div>
-      </ul>
+                <span *ngIf="myAuthServ.currentUser">
+                <a (click)="addToFavorites(onePin._id)" class="btn btn-light btn-sm"><span class="glyphicon glyphicon-heart"></span>❤</a>
+                <a [routerLink]="['/comments', onePin._id]" class="btn btn-light btn-sm">
+                    <img [src]="commentIcon" style="height: 20px; width: 20px">
+                </a>
+                <a [routerLink]="['/allPins', onePin._id]" class="btn btn-light btn-sm">Details</a>
+                </span>
+            </div>
+          </div>
+          </ul>
+    </div>
 </div>
+
+<div class="map-component">
+    <app-map></app-map>
+
+</div>
+
+

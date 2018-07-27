@@ -2,7 +2,7 @@
 <div class="container" style="width: 30%; margin: 0 auto; text-align: center">
 
     <div class="profileUpdate" >
-        <h4>Update profile   </h4>
+        <h4>Update profile</h4>
 
         <form (ngSubmit)="updateImage()">
             <label>
@@ -14,8 +14,7 @@
             <form (ngSubmit)="updateAbout()">
             <label>
               About me:
-              <textarea class="form-control" rows="5" id="aboutMe" style="width: 300px" placeholder="Description.."></textarea>
-              <!-- <input [(ngModel)]="settingsForm.aboutMe" type="text" name="aboutMe" placeholder="Description.." /> -->
+              <textarea [(ngModel)]="settingsForm.aboutMe" class="form-control" name="aboutMe" rows="5" id="aboutMe" style="width: 300px" placeholder="Description.."></textarea>
             </label>
             <br />
             <button>Update</button>
@@ -46,7 +45,7 @@
         <br />
     </form>
 
-        <form (ngSubmit)="changeEmal()">
+        <form (ngSubmit)="changeEmail()">
 
         <label>
           <input [(ngModel)]="settingsForm.email" type="email" name="changeEmail" placeholder="update email address" />

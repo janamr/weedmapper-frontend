@@ -50,7 +50,7 @@ export class PlantPinService {
       // return the Promise of the request (component will ".then()" & ".catch()")
       return this.myHttpServ
       .get(
-        `${backendUrl}/userPins/${id}`,
+        `${backendUrl}/plantPin/${id}`,
         { withCredentials: true }
        )
       .toPromise();
@@ -126,12 +126,21 @@ export class PlantPinService {
       .toPromise();
     }
 
+    getPlantCommentsList (id) {
+      return this.myHttpServ
+      .get(
+        `${backendUrl}/plant-comments/${id}`,
+      { withCredentials: true }
+      )
+      .toPromise();
+    }
+
     postComment( commentInfo: CommentSubmission ) {
       // console.log(id);
       return this.myHttpServ
       .post(
         `${backendUrl}/process-comments`,
-        {userComment: commentInfo.userComment, plantPin: this.clickedPlantPinId},
+        commentInfo,
         { withCredentials: true }
       )
       .toPromise();
@@ -139,13 +148,19 @@ export class PlantPinService {
 
     savePinId( id ) {
       this.clickedPlantPinId = id;
+      return this.clickedPlantPinId;
     }
 
     returnPPID() {
       const id = this.clickedPlantPinId;
       return id;
     }
+
+    refreshCommentsArray() {
+      this.clickedPlantPinId = null;
+    }
   }
+
 
 
 export class PlantPin {
@@ -176,4 +191,5 @@ export class Comment {
 
 export class CommentSubmission {
   userComment: string;
+  plantPin: string;
 }
