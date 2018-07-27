@@ -30,6 +30,7 @@ export class MapPageComponent implements OnInit {
 
   ) {
     this.commentIcon = "assets/images/comment.png";
+    this.favoriteIcon = "assets/images/heart.png";
   }
 
   ngOnInit() {

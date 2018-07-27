@@ -13,6 +13,8 @@ import { AuthService } from '../api/auth.service';
 })
 export class MapComponent implements OnInit {
   allPins: Array<PlantPin> = [];
+  commentIcon: string;
+  favoriteIcon: string;
 
   zoom: number = 8;
   // initial center position - change to include all pins?
@@ -24,7 +26,10 @@ export class MapComponent implements OnInit {
     public plantPinServ: PlantPinService,
     public myRouterServ: Router,
     public myAuthServ: AuthService
-  ) { }
+  ) {
+    this.commentIcon = "assets/images/comment.png";
+    this.favoriteIcon = "assets/images/heart.png";
+  }
 
   ngOnInit() {
     this.fetchAllPins();

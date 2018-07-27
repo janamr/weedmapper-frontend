@@ -4,21 +4,51 @@
 
     <!-- <app-comments *ngIf="plantPinServ.clickedPlantPinId"></app-comments> -->
 
-    <h2>Recently Posted</h2>
+    <!-- <h2>Recently Posted</h2>
+
+    <section>
+            <div class="container py-3">
+                <ul *ngFor="let onePin of allPins">
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-4">
+                      <img [src]="onePin.imageUrl" style="height: 8rem; width: 8rem"  class="w-100">
+                    </div>
+                    <div class="col-md-8 px-3">
+                      <div class="card-block px-3">
+                        <h5 class="card-title">{{onePin?.name}}</h5>
+                        <p class="card-text">{{onePin?.description}}</p>
+                        <span *ngIf="myAuthServ.currentUser">
+                                <a (click)="addToFavorites(onePin._id)" class="btn btn-light btn-sm">
+                                    <img [src]="favoriteIcon" style="height: 18px; width: 20px">
+                                </a>
+                                <a [routerLink]="['/comments', onePin._id]" class="btn btn-light btn-sm">
+                                    <img [src]="commentIcon" style="height: 20px; width: 20px">
+                                </a>
+                                <a [routerLink]="['/allPins', onePin._id]" class="btn btn-light btn-sm">Details</a>
+                                </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                </ul>
+                <br>
+              </div>
+          </section> -->
 
     <div class="card-deck mb-3 text-center">
         <ul *ngFor="let onePin of allPins">
           <div class="card mb-4 box-shadow" style="width: 12rem;">
-                <!-- <div class="view overlay">
-                <div class="card-img-top" style="background-image: '[src]=onePin.imageUrl'"></div>
-               </div> -->
           <img [src]="onePin.imageUrl" style="height: 12rem;" class="card-img-top">
             <div class="card-body">
                 <p class="card-text">{{onePin?.name}}</p>
                 <p class="card-text">{{onePin?.description}}</p>
 
                 <span *ngIf="myAuthServ.currentUser">
-                <a (click)="addToFavorites(onePin._id)" class="btn btn-light btn-sm"><span class="glyphicon glyphicon-heart"></span>❤</a>
+                <a (click)="addToFavorites(onePin._id)" class="btn btn-light btn-sm">
+                    <img [src]="favoriteIcon" style="height: 18px; width: 20px">
+                </a>
                 <a [routerLink]="['/comments', onePin._id]" class="btn btn-light btn-sm">
                     <img [src]="commentIcon" style="height: 20px; width: 20px">
                 </a>
@@ -35,4 +65,4 @@
 
 </div>
 
-
+</div>

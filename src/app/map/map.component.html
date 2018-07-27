@@ -22,9 +22,12 @@
         <br/>
         <span *ngIf="myAuthServ.currentUser">
             <!-- <a routerLink="/favorites-add" class="button">❤️</a><br> -->
-            <button (click)="addToFavorites(plantPin._id)" class="btn btn-light btn-sm"><span class="glyphicon glyphicon-heart"></span>❤</button>
+            <a (click)="addToFavorites(plantPin._id)" class="btn btn-light btn-sm">
+                <img [src]="favoriteIcon" style="height: 18px; width: 20px">
+            </a>
             <!-- <span class="glyphicon glyphicon-heart" (click)="addToFavorites(plantPin._id)" aria-hidden="true"></span> -->
-            <button [routerLink]="['/comments', plantPin._id]" class="btn btn-light btn-sm"><span class="glyphicon glyphicon-comment">Comment</span></button>
+            <a [routerLink]="['/comments', plantPin._id]" class="btn btn-light btn-sm">
+              <img [src]="commentIcon" style="height: 20px; width: 20px"></a>
             <a [routerLink]="['/allPins', plantPin._id]" class="btn btn-light btn-sm">Details</a>
 
         </span>

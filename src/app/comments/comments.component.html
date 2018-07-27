@@ -1,15 +1,19 @@
+
+
+<h3>{{currentPlant?.name}}</h3>
+<img [src]="currentPlant?.imageUrl" style="height: 200px; padding-bottom: 30px">
+
 <div class="form-group">
 
 <form (ngSubmit)="leaveComment()">
-    <label for="comment">Leave a comment:</label>
+    <label for="comment"><h5>Leave a comment:</h5></label>
           <br/>
-          <textarea [(ngModel)]="commentForm.userComment" name="userComment" placeholder="Observations about this plant" class="form-control" rows="5" id="comment" style="width: 200px"></textarea>
+          <textarea [(ngModel)]="commentForm.userComment" name="userComment" placeholder="Observations about this plant" class="form-control" rows="4" id="comment" style="width: 300px"></textarea>
           <br/>
           <button>Submit</button>
 </form>
 
-<h3>{{currentPlant?.name}}</h3>
-<img [src]="currentPlant?.imageUrl" alt="">
+</div>
 
 
 <div class="card w-50">
@@ -21,5 +25,6 @@
           <a href="#" class="btn">Reply</a>
         </div>
       </div>
+</div>
 
 

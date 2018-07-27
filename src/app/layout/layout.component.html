@@ -1,15 +1,17 @@
 
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-xl navbar-dark bg-dark" style="height: 80px;">
-        <a class="navbar-brand" href="/">#weedmapper</a>
+  <div class=" forTheLoveOfGodSSLEEPP">
 
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-            <!-- <div class="form-inline my-2 my-md-0"> -->
-              <div class="form-group mx-auto" style="padding-top: 15px; padding-left: 165px" id="pac-container">
-                <input #searchTag id="pac-input" type="text" class="form-control mr-sm-2" placeholder="Enter a location">
-              </div>
-            <!-- </div> -->
-            <span *ngIf="!myAuthServ.currentUser">
+    <nav class=" navbar navbar-expand-xl navbar-dark bg-dark" style="height: 100px;">
+      <a class="navbar-brand" style="color: rgb(255, 56, 21); font-weight: bold; font-size: 40px;" href="/">#weedmapper</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <!-- <div class="form-inline my-2 my-md-0"> -->
+          <div class="form-group mx-auto" style="padding-top: 15px; padding-left: 70px;" id="pac-container">
+            <input #searchTag id="pac-input" type="text" class="form-control mr-sm-2" placeholder="Enter a location">
+          </div>
+          <!-- </div> -->
+          <span *ngIf="!myAuthServ.currentUser">
 
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
@@ -18,45 +20,46 @@
               <li class="nav-item">
                 <a routerLink="/map-page" class="nav-link">Search</a>
               </li>
-                  <li class="nav-item">
-                      <a routerLink="/signup" class="nav-link">Post</a>
-                    </li>
-                    <li class="nav-item">
-                      <a routerLink="/login" class="nav-link">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                      <a routerLink="/signup" class="nav-link">Sign Up</a>
-                    </li>
-                    </ul>
-              </span>
+              <li class="nav-item">
+                <a routerLink="/signup" class="nav-link">Post</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/login" class="nav-link">Log In</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/signup" class="nav-link">Sign Up</a>
+              </li>
+            </ul>
+          </span>
 
-              <span *ngIf="myAuthServ.currentUser">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                      <a routerLink="/about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a routerLink="/map-page" class="nav-link">Search</a>
-                    </li>
-                     <li class="nav-item">
-                      <a routerLink="/plantPin/add" class="nav-link">Post</a>
-                    </li>
-                    <li class="nav-item">
-                        <a routerLink="/userPage" class="nav-link">Favorites</a>
-                      </li>
-                          <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">username</a>
-                              <div class="dropdown-menu" >
-                                <a routerLink="/userPage" class="dropdown-item">Profile</a>
-                                <a routerLink="/settings" class="dropdown-item">Settings</a>
-                                <a (click)="logoutClick()" class="dropdown-item">Log out</a>
-                              </div>
-                            </li>
-                          </ul>
-                    </span>
-          </div>
+          <span *ngIf="myAuthServ.currentUser">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a routerLink="/about" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/map-page" class="nav-link">Search</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/plantPin/add" class="nav-link">Post</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/userPage" class="nav-link">Favorites</a>
+              </li>
+              <li class="  nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">user</a>
+                <div class="dropdown-menu" >
+                  <a routerLink="/userPage" class="dropdown-item">Profile</a>
+                  <a routerLink="/settings" class="dropdown-item">Settings</a>
+                  <a (click)="logoutClick()" class="dropdown-item">Log out</a>
+                </div>
+              </li>
+            </ul>
+          </span>
+        </div>
 
-    </nav>
+      </nav>
 
-          <router-outlet></router-outlet>
-</div>
+    </div>
+      <router-outlet></router-outlet>
+    </div>
